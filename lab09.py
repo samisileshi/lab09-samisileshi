@@ -1,4 +1,7 @@
 def two_sum(nums, target):
+    # -- Store seen numbers
+    # -- Check needed difference
+    # -- Return matching indices
     seen = {}
     for i, num in enumerate(nums):
         complement = target - num
@@ -8,6 +11,9 @@ def two_sum(nums, target):
 
 
 def max_profit(prices):
+    # -- Track lowest price
+    # -- Calculate possible profit
+    # -- Return highest profit
     min_price = float('inf')
     max_profit = 0
     for price in prices:
@@ -21,7 +27,9 @@ def max_profit(prices):
 
 
 def max_subarray(nums):
-
+    # -- Start current sum
+    # -- Extend or restart
+    # -- Track largest sum
     current_sum = max_sum = nums[0]
     for num in nums[1:]:
         current_sum = max(num, current_sum + num)
@@ -29,7 +37,10 @@ def max_subarray(nums):
     return max_sum
 
 
-def is_balanced(s):   # Part 4 - stretch (optional)
+def is_balanced(s):
+    # -- Store opening brackets
+    # -- Match closing brackets
+    # -- Check remaining brackets
     stack = []
     pairs = {')': '(', ']': '[', '}': '{'}
     for char in s:
